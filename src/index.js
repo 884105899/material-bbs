@@ -2,11 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import blue from '@material-ui/core/colors/blue';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const theme = createMuiTheme({
+    palette: {
+        primary: blue,
+    },
+    typography: {
+        useNextVariants: true,
+    },
+})
+/*  在路由中使用withStyles以及connect()的方法如下
+    export default withRouter(connect()(withStyles(styles)(FirstPage)))
+*/
+ReactDOM.render(
+    <React.Fragment>
+        <CssBaseline>
+            <MuiThemeProvider theme={theme}>
+                <App />
+            </MuiThemeProvider>
+        </CssBaseline>
+    </React.Fragment>
+    , document.getElementById('root'));
