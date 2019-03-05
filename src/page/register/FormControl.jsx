@@ -29,9 +29,7 @@ class Forms extends React.Component {
         return (
             <React.Fragment>
                 <FormControl className={styles.form}>
-
                     <InputLabel htmlFor="email-input">Email</InputLabel>
-
                     <Input
                         id="email-input"
                         startAdornment={
