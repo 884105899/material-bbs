@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Header from './common/header';
-import Register from './page/register';
+import Login from './page/login';
+import Editor from './page/editor'
 import styles from './App.module.css';
 import { Route, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
+import Register from './page/register'
 
 class App extends Component {
   render() {
@@ -13,6 +15,8 @@ class App extends Component {
         <BrowserRouter>
           <div className={styles.root}>
             <Header />
+            <Route path='/login' exact component={Login} />
+            <Route path='/editor' exact component={Editor} />
             <Route path='/register' exact component={Register} />
           </div>
         </BrowserRouter>

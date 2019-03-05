@@ -1,38 +1,74 @@
-.root {
-    background: rgba(0, 0, 0, 0.5)
-}
-
-@media screen and (min-width:1200px) {
-    .in_root {
-        max-width: 1140px
-    }
-}
-
-@media screen and (min-width:992px) {
-    .in_root {
-        max-width: 960px
-    }
-}
-
-@media screen and (min-width:768px) {
-    .in_root {
-        max-width: 720px
-    }
-}
-
-.in_root {
+.jss592 {
+    max-width: 1140px;
     width: 100%;
     color: #fff;
     z-index: 2;
     position: relative;
     margin-left: auto;
-    padding-top: 20vh;
+    padding-top: 50px;
     padding-left: 15px;
     margin-right: auto;
     padding-right: 15px;
 }
 
-.in_root_box {
+.jss265 {
+    width: auto;
+    margin-left: -15px;
+    margin-right: -15px;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.jss363 {
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.jss442 {
+    padding: 40px 0px;
+    border-radius: 6px;
+    margin-bottom: 100px;
+    color: rgba(0, 0, 0, 0.87);
+    width: 100%;
+    border: 0;
+    display: flex;
+    position: relative;
+    min-width: 0;
+    word-wrap: break-word;
+    font-size: .875rem;
+    margin-top: 30px;
+    background: #fff;
+    flex-direction: column;
+}
+
+.jss595 {
+    color: #3c4858;
+    text-align: center !important;
+    font-size: 2.25rem;
+    line-height: 1.5em;
+    margin-top: .625rem;
+    min-height: auto;
+    font-weight: 700;
+    font-family: 'Robot Slab', 'Times New Roman', serif;
+    margin-bottom: 0.75rem;
+    text-decoration: none;
+}
+
+.jss471 {
+    flex: 1 1 auto;
+    padding: 0.9375rem 1.875rem;
+}
+
+.jss265 {
     width: auto;
     margin-left: -15px;
     margin-right: -15px;
@@ -42,67 +78,55 @@
     box-sizing: border-box;
 }
 
-.in_root_box_card {
+.jss267 {
     width: 100%;
     position: relative;
     min-height: 1px;
-    flex-basis: auto;
     padding-left: 15px;
     padding-right: 15px;
-    margin: 0;
-    box-sizing: border-box;
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
 }
 
-@media screen and (min-width:960px) {
-    .in_root_box_card {
-        flex-grow: 0;
-        max-width: 66.666666%;
-    }
+.jss626 {
+    padding: 0px 0px 20px !important;
+    margin: 0 auto;
+    max-width: 360px;
 }
 
-.in_card {
-    color: rgba(0, 0, 0, 0.87);
-    width: 100%;
-    border: 0;
-    display: flex;
-    position: relative;
-    min-width: 0;
-    word-wrap: break-word;
-    font-size: 0.875rem;
-    margin-top: 30px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    transition: all 300ms linear;
-    margin-bottom: 30px;
-    border-radius: 6px;
-    flex-direction: column;
-}
-
-.login_card {
-    flex: 1 1 auto;
-    padding: 0.9375rem 1.875rem;
-}
-
-.button_box {
-    display: flex;
-    padding: 0.9375rem 1.875rem;
-    align-items: center;
-    width: 33.333333%;
-    background-color: transparent;
-    border: 0;
-    padding-top: 0rem;
-    border-radius: 6px;
-    justify-content: center !important;
-}
-
-.button {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    z-index: 0;
-    position: absolute;
+.jss378 {
+    color: #999;
     overflow: hidden;
-    border-radius: inherit;
-    color: #9c27b0 !important;
+}
+
+.jss379 {
+    color: #3c4858;
+    margin: 1.75rem 0 0.875rem !important;
+    margin-top: 30px;
+    min-height: unset;
+    font-weight: 700;
+    font-family: "Robot Slab", "Times New Roman", serif;
+    margin-bottom: 25px;
+    text-decoration: none;
+    font-size: 1.125rem;
+    line-height: 1.5em;
+}
+
+.jss380 {
+    color: #999;
+    overflow: hidden;
+    margin-top: 0px;
+}
+
+.jss268 {
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 44px;
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
 }

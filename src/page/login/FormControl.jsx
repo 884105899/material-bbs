@@ -8,9 +8,16 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import EmailRounded from '@material-ui/icons/EmailRounded'
 import Lock from '@material-ui/icons/LockRounded'
-import styles from './form.module.css'
-import Fab from '@material-ui/core/Fab';
-import NavigationIcon from '@material-ui/icons/Navigation';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+
+const style = theme => ({
+    margin: {
+        margin: theme.spacing.unit,
+        width: '100%',
+        marginBottom: '30px'
+    },
+});
 
 class Forms extends React.Component {
     state = {
@@ -26,22 +33,10 @@ class Forms extends React.Component {
         this.setState(state => ({ showPassword: !state.showPassword }));
     };
     render() {
+        const { classes } = this.props;
         return (
             <React.Fragment>
-                <FormControl className={styles.form}>
-
-                    <InputLabel htmlFor="email-input">Email</InputLabel>
-
-                    <Input
-                        id="email-input"
-                        startAdornment={
-                            <InputAdornment position="start">
-                                <EmailRounded />
-                            </InputAdornment>
-                        }
-                    />
-                </FormControl>
-                <FormControl className={styles.form}>
+                <FormControl className={classes.margin}>
                     <InputLabel htmlFor="email-input">Email</InputLabel>
                     <Input
                         id="email-input"
@@ -52,7 +47,7 @@ class Forms extends React.Component {
                         }
                     />
                 </FormControl>
-                <FormControl className={styles.form}>
+                <FormControl className={classes.margin}>
                     <InputLabel htmlFor="password-input">Password</InputLabel>
                     <Input
                         id="adornment-password"
@@ -76,14 +71,11 @@ class Forms extends React.Component {
                         }
                     />
                 </FormControl>
-                <div className={styles.button}>
-                    <Fab variant="extended" size="medium">
-                        <NavigationIcon />
-                        Extended
-                </Fab>
-                </div>
-            </React.Fragment >
+            </React.Fragment>
         )
     }
 }
-export default Forms
+Forms.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+export default withStyles(style)(Forms)
