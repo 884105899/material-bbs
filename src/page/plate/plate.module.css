@@ -1,0 +1,94 @@
+.jss1 {
+    color: white;
+    font-size: 30px;
+    width: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: -15px;
+    margin-right: -15px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.jss111{
+    display: block;
+}
+
+.jss2 {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.jss3 {
+    text-align: center;
+}
+
+.jss4 {
+    opacity: 1;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+
+
+.jss11 {
+    justify-content: center;
+    display: flex;
+    margin-top: 55px;
+    margin-bottom: -75px;
+}
+.jss12 {
+    font-size: 20px;
+    color:white;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+    background-color: #424880;
+    float: left;
+    margin: 0 35px;
+    height: auto;
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+    min-width: 100px;
+    max-width: 100%;
+    transition: all .3s;
+    text-align: center;
+    min-height: unset;
+    border-radius: 30px;
+}
+
+.jss13 {
+    flex-grow: 0;
+    flex-basis: 50%;
+    margin: 0;
+    box-sizing: border-box;
+    opacity: 1;
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 65px;
+}
+
+.jss14 {
+    width: auto;
+    margin-left: 25px;
+    margin-right: 5px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-top: 85px;
+    margin-bottom: 85px;
+}
