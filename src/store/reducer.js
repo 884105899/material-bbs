@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux-immutable'
-import { reducer as registerReducer } from '../page/register/store'
+import { reducer as plateReducer} from '../page/plate/store'
 
 const reducer = combineReducers({
-    register: registerReducer
+    plate: plateReducer
 })
 export default reducer
