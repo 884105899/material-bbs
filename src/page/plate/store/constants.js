@@ -1,0 +1,1 @@
+export const GET_PLATE_DATA = 'plate/get_plate_data'
