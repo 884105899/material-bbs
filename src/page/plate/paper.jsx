@@ -5,6 +5,8 @@ import Paper from '@material-ui/core/Paper';
 import RecipeReviewCard from './card'
 import style from './plate.module.css'
 import { connect } from 'react-redux'
+import { actionCreators } from './store';
+import FloatingActionButtons from './floatButton'
 
 
 const styles = theme => ({
@@ -17,26 +19,31 @@ const styles = theme => ({
 class PaperSheet extends React.Component {
 
   render() {
-    const { classes, plateList } = this.props;
-    const BtnList = [
-      'All', '111'
-    ]
+    const { classes, plateList, buttonList, handlePlateSelect, nowButton } = this.props;
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
           <div>
             <div className={style.jss11}>
-              {BtnList.map((item,index) => <button className={style.jss12} key={index}>{item}</button>)}
+              {buttonList.map((item, index) =>
+                <button className={style.jss12} key={index}
+                  onClick={() => handlePlateSelect(index)}>
+                  {item.get('buttonname')}
+                </button>)}
             </div>
             <div className={style.jss14}>
               {plateList.map((item) => {
-                return (<div className={style.jss13} key={item.get('id')}>
-                  <div>
-                    <RecipeReviewCard title={item.get('title')} subheader={item.get('subheader')} comment={item.get('comment')} />
-                  </div>
-                </div>)
+                if (item.get('class') === nowButton) {
+                  return (<div className={style.jss13} key={item.get('id')}>
+                    <div>
+                      <RecipeReviewCard title={item.get('title')} subheader={item.get('subheader')} comment={item.get('comment')} />
+                    </div>
+                  </div>)
+                }
+                else return null;
               })
               }
+              <FloatingActionButtons />
             </div>
           </div>
         </Paper>
@@ -48,8 +55,17 @@ class PaperSheet extends React.Component {
 PaperSheet.propTypes = {
   classes: PropTypes.object.isRequired,
 };
-const mapState = (state) => ({
-  plateList: state.getIn(['plate', 'plates']),
+const mapDispatch = (dispatch) => ({
+  handlePlateSelect(index) {
+    const action = actionCreators.selectPlateClass(index)
+    dispatch(action)
+  }
 })
 
-export default connect(mapState, null)(withStyles(styles)(PaperSheet));
+const mapState = (state) => ({
+  plateList: state.getIn(['plate', 'plates']),
+  buttonList: state.getIn(['plate', 'buttons']),
+  nowButton: state.getIn(['plate', 'nowButton'])
+})
+
+export default connect(mapState, mapDispatch)(withStyles(styles)(PaperSheet));

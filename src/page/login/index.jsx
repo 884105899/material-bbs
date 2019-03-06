@@ -1,9 +1,7 @@
 import React from 'react'
 import styles from './login.module.css'
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Forms from './FormControl'
 
 
@@ -20,11 +18,6 @@ class Login extends React.Component {
                                     <CardContent>
                                         <Forms />
                                     </CardContent>
-                                    <CardActions style={{ display: 'block' }}>
-                                        <div className={styles.card_box}>
-                                            <Button className={styles.button}>Login</Button>
-                                        </div>
-                                    </CardActions>
                                 </Card>
                             </div>
                         </div>

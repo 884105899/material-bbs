@@ -10,6 +10,9 @@ import EmailRounded from '@material-ui/icons/EmailRounded'
 import Lock from '@material-ui/icons/LockRounded'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux'
+import Button from '@material-ui/core/Button';
+import { actionCreators } from './store'
 
 const style = theme => ({
     margin: {
@@ -20,11 +23,15 @@ const style = theme => ({
 });
 
 class Forms extends React.Component {
-    state = {
-        password: '',
-        showPassword: false,
-    };
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            showPassword: false,
+        }
+        this.handleChangeName = this.handleChangeName.bind(this);
+    }
     handleChange = prop => event => {
         this.setState({ [prop]: event.target.value });
     };
@@ -32,6 +39,11 @@ class Forms extends React.Component {
     handleClickShowPassword = () => {
         this.setState(state => ({ showPassword: !state.showPassword }));
     };
+
+    handleChangeName(e) {
+        this.setState({ email: e.target.value })
+    }
+
     render() {
         const { classes } = this.props;
         return (
@@ -45,6 +57,8 @@ class Forms extends React.Component {
                                 <EmailRounded />
                             </InputAdornment>
                         }
+                        value={this.state.name}
+                        onChange={this.handleChangeName}
                     />
                 </FormControl>
                 <FormControl className={classes.margin}>
@@ -69,8 +83,12 @@ class Forms extends React.Component {
                                 </IconButton>
                             </InputAdornment>
                         }
+
                     />
                 </FormControl>
+                <div>
+                    <Button onClick={() => { this.props.login(this.state.email, this.state.password) }}>Login</Button>
+                </div>
             </React.Fragment>
         )
     }
@@ -78,4 +96,12 @@ class Forms extends React.Component {
 Forms.propTypes = {
     classes: PropTypes.object.isRequired,
 };
-export default withStyles(style)(Forms)
+
+const mapDispatch = (dispatch) => ({
+    login(email, password) {
+        const action = actionCreators.getUserInfo(email, password)
+        dispatch(action)
+    }
+})
+
+export default connect(null, mapDispatch)((withStyles(style)(Forms)))

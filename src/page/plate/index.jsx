@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from './plate.module.css'
 import PaperSheet from './paper'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { actionCreators } from './store';
 
-class Plate extends React.Component{
-    render(){
-        return(
+
+class Plate extends React.Component {
+    render() {
+        return (
             <div>
                 <div className={styles.jss1}>
                     <div className={styles.jss2}>
@@ -15,19 +16,25 @@ class Plate extends React.Component{
                 </div>
                 <div className={styles.jss4}>
                     <PaperSheet />
+
                 </div>
             </div>
         )
     }
-    componentDidMount(){
+    componentDidMount() {
         this.props.getPlateList()
-      }
+        this.props.getButtonList()
+    }
 }
 const mapDispatch = (dispatch) => ({
-  getPlateList(){
-    const action = actionCreators.getPlateDate()
-    dispatch(action)
-  }
+    getPlateList() {
+        const action = actionCreators.getPlateDate()
+        dispatch(action)
+    },
+    getButtonList() {
+        const action = actionCreators.getButtonName()
+        dispatch(action)
+    }
 })
 
-export default connect(null,mapDispatch)(Plate); 
+export default connect(null, mapDispatch)(Plate); 

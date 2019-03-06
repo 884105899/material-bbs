@@ -38,6 +38,7 @@ class Register extends React.Component {
                                         </div>
                                         <div className={styles.jss268}>
                                             <Forms />
+
                                         </div>
                                     </div>
                                 </div>

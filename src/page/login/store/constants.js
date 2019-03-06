@@ -1,0 +1,1 @@
+export const LOGIN_CONFIR = 'login_confir'
