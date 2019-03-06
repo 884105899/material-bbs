@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import EmailRounded from '@material-ui/icons/EmailRounded'
+import AccountCircle from '@material-ui/icons/AccountCircle'
 import Lock from '@material-ui/icons/LockRounded'
 import styles from './form.module.css'
 import Fab from '@material-ui/core/Fab';
@@ -34,7 +35,7 @@ class Forms extends React.Component {
                         id="email-input"
                         startAdornment={
                             <InputAdornment position="start">
-                                <EmailRounded />
+                                <AccountCircle />
                             </InputAdornment>
                         }
                     />

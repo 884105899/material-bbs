@@ -2,28 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import Avatar from '@material-ui/core/Avatar';
-import FolderIcon from '@material-ui/icons/Folder';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import Apps from '@material-ui/icons/Apps';
+import FiberNew from '@material-ui/icons/FiberNew'
+import { Link } from 'react-router-dom'
 const styles = theme => ({
     avatar: {
-        marginLeft: '10px'
+        marginLeft: '10px',
+        background: 'rgba(0, 0, 0, 0.5)'
     },
     root: {
         width: '100%',
     },
     grow: {
         flexGrow: 1,
-    },
-    title: {
-        display: 'none',
-        [theme.breakpoints.up('sm')]: {
-            display: 'block',
-        },
     },
     search: {
         position: 'relative',
@@ -86,9 +83,18 @@ class SearchAppBar extends React.Component {
             <div className={classes.root}>
                 <AppBar position="static" style={{ background: 'rgba(0, 0, 0, 0.5)' }}>
                     <Toolbar>
-                        <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-                            BBS
-                    </Typography>
+
+                        <Link to='/'>
+                            <Avatar className={classes.avatar}>
+                                <FiberNew />
+                            </Avatar>
+                        </Link>
+                        <Link to='/plate'>
+                            <Avatar className={classes.avatar}>
+                                <Apps />
+                            </Avatar>
+                        </Link>
+
                         <div className={classes.grow} />
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
@@ -102,9 +108,11 @@ class SearchAppBar extends React.Component {
                                 }}
                             />
                         </div>
-                        <Avatar className={classes.avatar}>
-                            <FolderIcon />
-                        </Avatar>
+                        <Link to='/login'>
+                            <Avatar className={classes.avatar}>
+                                <AccountCircle />
+                            </Avatar>
+                        </Link>
                     </Toolbar>
                 </AppBar>
             </div>

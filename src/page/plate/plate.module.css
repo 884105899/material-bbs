@@ -4,15 +4,13 @@
     width: auto;
     margin-top: 100px;
     margin-bottom: 100px;
-    margin-left: -15px;
-    margin-right: -15px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
 }
 
-.jss111{
+.jss111 {
     display: block;
 }
 
@@ -40,17 +38,16 @@
     margin-right: 70px;
 }
 
-
-
 .jss11 {
     justify-content: center;
     display: flex;
     margin-top: 55px;
     margin-bottom: -75px;
 }
+
 .jss12 {
     font-size: 20px;
-    color:white;
+    color: white;
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
     background-color: #424880;
     float: left;
