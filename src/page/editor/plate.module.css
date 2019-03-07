@@ -2,8 +2,6 @@
     color: white;
     font-size: 30px;
     width: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -34,8 +32,10 @@
 
 .jss4 {
     opacity: 1;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-left: 0 !important;
+    padding-right: 0 !important
 }
 
 .jss11 {
@@ -62,7 +62,6 @@
     text-align: center;
     min-height: unset;
     border-radius: 30px;
-    cursor: pointer;
 }
 
 .jss13 {
@@ -80,13 +79,16 @@
 }
 
 .jss14 {
-    width: auto;
-    margin-left: 25px;
-    margin-right: 5px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 25px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin-top: 85px;
-    margin-bottom: 85px;
+}
+
+.editor_box {
+    width: 100%;
+    height: auto;
 }

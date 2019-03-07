@@ -9,6 +9,7 @@ import store from './store';
 import Home from './page/home';
 import Plate from './page/plate';
 import Register from './page/register'
+import Detail from './page/details'
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path='/plate' exact component={Plate} />
             <Route path='/editor' exact component={Editor} />
             <Route path='/register' exact component={Register} />
+            <Route path='/details' exact component={Detail} />
           </div>
         </BrowserRouter>
       </Provider>

@@ -26,9 +26,9 @@ class PaperSheet extends React.Component {
           <div>
             <div className={style.jss11}>
               {buttonList.map((item, index) =>
-                <button className={style.jss12} key={index}
-                  onClick={() => handlePlateSelect(index)}>
-                  {item.get('buttonname')}
+                <button className={style.jss12} key={item.get('uuid')}
+                  onClick={() => handlePlateSelect(item.get('uuid'))}>
+                  {item.get('name')}
                 </button>)}
             </div>
             <div className={style.jss14}>

@@ -13,6 +13,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button';
 import { actionCreators } from './store'
+import { Redirect } from 'react-router-dom'
 
 const style = theme => ({
     margin: {
@@ -46,57 +47,64 @@ class Forms extends React.Component {
 
     render() {
         const { classes } = this.props;
-        return (
-            <React.Fragment>
-                <FormControl className={classes.margin}>
-                    <InputLabel htmlFor="email-input">Email</InputLabel>
-                    <Input
-                        id="email-input"
-                        startAdornment={
-                            <InputAdornment position="start">
-                                <EmailRounded />
-                            </InputAdornment>
-                        }
-                        value={this.state.name}
-                        onChange={this.handleChangeName}
-                    />
-                </FormControl>
-                <FormControl className={classes.margin}>
-                    <InputLabel htmlFor="password-input">Password</InputLabel>
-                    <Input
-                        id="adornment-password"
-                        type={this.state.showPassword ? 'text' : 'password'}
-                        value={this.state.password}
-                        onChange={this.handleChange('password')}
-                        startAdornment={
-                            <InputAdornment position="start">
-                                <Lock />
-                            </InputAdornment>
-                        }
-                        endAdornment={
-                            <InputAdornment position="end">
-                                <IconButton
-                                    aria-label="Toggle password visibility"
-                                    onClick={this.handleClickShowPassword}
-                                >
-                                    {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
-                                </IconButton>
-                            </InputAdornment>
-                        }
+        if (this.props.status === true) {
+            return <Redirect to='/plate' />
+        } else {
+            return (
+                <React.Fragment>
+                    <FormControl className={classes.margin}>
+                        <InputLabel htmlFor="email-input">Email</InputLabel>
+                        <Input
+                            id="email-input"
+                            startAdornment={
+                                <InputAdornment position="start">
+                                    <EmailRounded />
+                                </InputAdornment>
+                            }
+                            value={this.state.name}
+                            onChange={this.handleChangeName}
+                        />
+                    </FormControl>
+                    <FormControl className={classes.margin}>
+                        <InputLabel htmlFor="password-input">Password</InputLabel>
+                        <Input
+                            id="adornment-password"
+                            type={this.state.showPassword ? 'text' : 'password'}
+                            value={this.state.password}
+                            onChange={this.handleChange('password')}
+                            startAdornment={
+                                <InputAdornment position="start">
+                                    <Lock />
+                                </InputAdornment>
+                            }
+                            endAdornment={
+                                <InputAdornment position="end">
+                                    <IconButton
+                                        aria-label="Toggle password visibility"
+                                        onClick={this.handleClickShowPassword}
+                                    >
+                                        {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
+                                    </IconButton>
+                                </InputAdornment>
+                            }
 
-                    />
-                </FormControl>
-                <div>
-                    <Button onClick={() => { this.props.login(this.state.email, this.state.password) }}>Login</Button>
-                </div>
-            </React.Fragment>
-        )
+                        />
+                    </FormControl>
+                    <div>
+                        <Button onClick={() => { this.props.login(this.state.email, this.state.password) }}>Login</Button>
+                    </div>
+                </React.Fragment>
+            )
+        }
+
     }
 }
 Forms.propTypes = {
     classes: PropTypes.object.isRequired,
 };
-
+const mapState = (state) => ({
+    status: state.getIn(['login', 'logStatus'])
+})
 const mapDispatch = (dispatch) => ({
     login(email, password) {
         const action = actionCreators.getUserInfo(email, password)
@@ -104,4 +112,4 @@ const mapDispatch = (dispatch) => ({
     }
 })
 
-export default connect(null, mapDispatch)((withStyles(style)(Forms)))
+export default connect(mapState, mapDispatch)((withStyles(style)(Forms)))

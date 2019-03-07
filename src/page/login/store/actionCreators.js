@@ -8,12 +8,12 @@ const loginConfir = (logstate) => ({
 
 export const getUserInfo = (email, password) => {
     return (dispatch) => {
-        axios.get('/api/users.json').then((res) => {
-            console.log(password)
-            if (res.data.password === password) {
+        axios.get(`/users/email/${email}`).then((res) => {
+            if (res.data === password) {
+                alert("登录成功")
                 dispatch(loginConfir(true))
             } else {
-                console.log('denglushibai')
+                alert("登陆失败")
                 dispatch(loginConfir(false))
             }
         })
